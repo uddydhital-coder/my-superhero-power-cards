@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Superhero Power Cards</title>
+</head>
+<body>
+    <title>My Superhero Power Cards</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: lightcyan;
+            padding: 30px;
+            text-align: center;
+        }
+        h1 {
+            color: red;
+        }
+        p { 
+            color: rgb(250, 127, 238);
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+        .hero-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+        }
+        .hero-power {
+            color: aquamarine;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        button {
+            background: green;
+            color: aqua;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <h1>My Superhero Power Cards</h1>
+    <p>Use a JavaScript class to make superhero cards</p>
+
+    <button onclick="showHeroes()">Show Heroes</button>
+
+    <div class="cards">
+        <div id="card1"></div>
+        <div id="card2"></div>
+        <div id="card3"></div>
+    </div>
+
+    <script>
+        class Superhero {
+            constructor(name, power) {
+                this.name = name;
+                this.power = power;
+            }
+            describe() {
+                return this.name + ": " + this.power;
+            }
+        }
+
+        function showHeroes() {
+            let h1 = new Superhero("Thunderbolt", "Controls lightning and storms");
+            let h2 = new Superhero("ShadowStrike", "Can turn invisible and move silently");
+            let h3 = new Superhero("TitanForce", "Super strength and unbreakable skin");
+
+            document.getElementById("card1").innerHTML =
+                "<div class='hero-name'>" + h1.name + "</div>" +
+                "<div class='hero-power'>" + h1.describe() + "</div>";
+
+            document.getElementById("card2").innerHTML =
+                "<div class='hero-name'>" + h2.name + "</div>" +
+                "<div class='hero-power'>" + h2.describe() + "</div>";
+
+            document.getElementById("card3").innerHTML =
+                "<div class='hero-name'>" + h3.name + "</div>" +
+                "<div class='hero-power'>" + h3.describe() + "</div>";
+        }
+    </script>
+
+</body>
+</html>
